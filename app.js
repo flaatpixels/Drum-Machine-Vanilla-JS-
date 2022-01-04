@@ -240,7 +240,7 @@ const bankOne = [
    * @param {*} e 
    */
   const updateVolume = (e) => {
-    document.getElementsByTagName("audio")
+    Array.from(document.getElementsByTagName("audio"))
             .forEach(audio => audio.volume = e.currentTarget.value);
   }
 
@@ -249,9 +249,9 @@ const bankOne = [
   powerButton.addEventListener("change", (e) => {
     if(e.currentTarget.checked) {
       document.addEventListener("keydown", handleKeyDown);
-      document.getElementsByClassName("pad").forEach(button => button.addEventListener("click", handleClick))
+      Array.from(document.getElementsByClassName("pad")).forEach(button => button.addEventListener("click", handleClick))
     } else {
-      document.getElementsByClassName("pad").forEach(button => button.removeEventListener("click", handleClick))
+      Array.from(document.getElementsByClassName("pad")).forEach(button => button.removeEventListener("click", handleClick))
       document.removeEventListener("keydown", handleKeyDown);
     }
   })
@@ -259,7 +259,3 @@ const bankOne = [
   toggleBankButton.addEventListener("change", (e) => !e.currentTarget.checked ? createPads(bankOne) : createPads(bankTwo));
 
   createPads(bankOne);
-  
-  
-  
-  

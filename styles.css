@@ -1,0 +1,150 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+
+    display: block;
+    background-color: black;
+}
+
+#drum-machine {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 700px;
+
+    margin: 0 auto;
+    padding: 35px 35px 5px 35px;
+   
+    background-color: #f3f3f3;
+    border-radius: 5px;
+
+    transform: translate(-50%, -50%);
+}
+
+#drum-machine-container {
+    display: flex;
+}
+
+#pads-container {
+    width: 390px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.pad-wrapper {
+    width: 130px;
+    height: 130px;
+    padding: 0 30px 30px 0;
+}
+
+.pad {
+    width: 100%;
+    height: 100%;
+
+    background-color: #835cfd;
+    border: none;
+    border-radius: 5px;
+
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .3);
+
+    color: white;
+
+    font-size: 20px;
+    cursor: pointer;
+    outline: none;
+}
+
+.pad:active {
+    box-shadow: none;
+    transform: translateY(5px);
+}
+
+#controls {
+    width: 35%;
+}
+
+#pad-name {
+    margin-bottom: 15px;
+    width: 100%;
+    padding: 10px 5px;
+
+    background-color: black;
+    color: white;
+
+    text-align: center;
+    font-size: 14px;
+}
+
+.volume {margin-bottom: 15px;}
+
+
+.power_btn { margin-bottom: 15px; }
+
+input[type="range"] {
+    appearance: none;
+    width: 100%;
+    height: 3px;
+
+    background-color: black;
+    outline: none;
+    border: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    background-color: #835cfd;
+
+    width: 5px;
+    height: 20px;
+
+    cursor: pointer;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+
+    position: relative;
+
+    width: 80px;
+    height: 40px;
+
+    border-radius: 40px;
+
+    background-color: black;
+    box-shadow: inset 1px 2px 10px #835cfd;
+
+    cursor: pointer;
+    transition: all .3s;
+}
+
+input:checked[type="checkbox"] { background-color: #835cfd; }
+
+input[type="checkbox"]:before {
+    content: '';
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 40px;
+    height: 40px;
+    
+    background-color: white;
+    border-radius: 50%;
+    box-shadow: 1px 2px 10px rgba(0, 0, 0, .2);
+
+    transform: scale(1.1);
+    transition: all .3s;
+}
+
+input:checked[type="checkbox"]:before { left: 40px; }
